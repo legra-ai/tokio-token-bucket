@@ -1,0 +1,10 @@
+delayed bug: unexpected rigid alias in layout_of after normalization: Alias(Yes, Alias { kind: Opaque { def_id: DefId(0:16 ~ tokio_token_bucket[7d2d]::{impl#0}::acquire::{opaque#0}) }, args: ['{erased}], .. })
+disabled backtrace
+delayed bug: unexpected rigid alias in layout_of after normalization: Alias(Yes, Alias { kind: Opaque { def_id: DefId(20:6769 ~ tokio[f6a3]::time::clock::advance::{opaque#0}) }, args: [], .. })
+disabled backtrace
+delayed bug: unexpected rigid alias in layout_of after normalization: Alias(Yes, Alias { kind: Projection { def_id: DefId(2:2945 ~ core[678b]::ptr::metadata::Pointee::Metadata) }, args: [Alias(Yes, Alias { kind: Opaque { def_id: DefId(0:16 ~ tokio_token_bucket[7d2d]::{impl#0}::acquire::{opaque#0}) }, args: ['{erased}], .. })], .. })
+disabled backtrace
+
+
+rustc version: 1.100.0-nightly (c656540d6 2026-08-21)
+platform: aarch64-apple-darwin

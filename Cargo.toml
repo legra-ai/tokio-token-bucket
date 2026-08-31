@@ -9,6 +9,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/legra-ai/tokio-token-bucket"
 documentation = "https://docs.rs/tokio-token-bucket"
 readme = "README.md"
+build = "build.rs"
 keywords = ["tokio", "async", "rate-limit", "throttle", "backpressure"]
 categories = ["asynchronous", "concurrency"]
 include = [
@@ -25,9 +26,17 @@ tokio = { version = "1", default-features = false, features = ["time"] }
 [dev-dependencies]
 tokio = { version = "1", default-features = false, features = ["macros", "rt", "test-util", "time"] }
 
+[build-dependencies]
+rhusky = "0.0.6"
+
 [lints.rust]
 missing_docs = "deny"
 
 [lints.clippy]
-all = "deny"
-pedantic = "deny"
+# `large_futures` computes the layout of every async opaque type; on current
+# nightlies that hits a rustc ICE ("unexpected rigid alias in layout_of after
+# normalization"). Stable passes clean. Re-enable once the compiler is fixed.
+large_futures = "allow"
+
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
