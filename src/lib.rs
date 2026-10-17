@@ -8,7 +8,9 @@
 //! immediately before starting one operation.
 
 use std::num::NonZeroU32;
-use std::time::{Duration, Instant};
+use std::time::Duration;
+
+use tokio::time::Instant;
 
 /// A bounded token bucket for asynchronous rate limiting.
 ///
