@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Bounded asynchronous rate limiting for Tokio tasks"
 authors = ["Jacobus Geluk <jacobus.geluk@dataroad.com>"]
 edition = "2024"
-rust-version = "1.89"
+rust-version = "1.89.0"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/legra-ai/tokio-token-bucket"
 documentation = "https://docs.rs/tokio-token-bucket"
@@ -12,13 +12,7 @@ readme = "README.md"
 build = "build.rs"
 keywords = ["tokio", "async", "rate-limit", "throttle", "backpressure"]
 categories = ["asynchronous", "concurrency"]
-include = [
-    "Cargo.toml",
-    "README.md",
-    "LICENSE-APACHE",
-    "LICENSE-MIT",
-    "src/**/*.rs",
-]
+include = ["src/**", "tests/**", "build.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE-MIT", "LICENSE-APACHE"]
 
 [dependencies]
 tokio = { version = "1", default-features = false, features = ["time"] }
@@ -27,7 +21,7 @@ tokio = { version = "1", default-features = false, features = ["time"] }
 tokio = { version = "1", default-features = false, features = ["macros", "rt", "test-util", "time"] }
 
 [build-dependencies]
-rhusky = "0.0.6"
+rhusky = "2.0.1"
 
 [lints.rust]
 missing_docs = "deny"

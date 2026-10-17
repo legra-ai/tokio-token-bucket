@@ -1,3 +1,5 @@
 /target/
-Cargo.lock
 CHANGELOG.md
+
+__pycache__/
+*.pyc
