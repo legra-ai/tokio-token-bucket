@@ -3,8 +3,32 @@ updates:
   - package-ecosystem: cargo
     directory: "/"
     schedule:
-      interval: weekly
+      interval: daily
+    allow:
+      - dependency-type: all
+    groups:
+      compatible-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: [minor, patch]
+      security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+    commit-message:
+      prefix: "build(deps)"
+    open-pull-requests-limit: 10
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
+      interval: daily
+    groups:
+      compatible-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: [minor, patch]
+      security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci(deps)"
+    open-pull-requests-limit: 10
