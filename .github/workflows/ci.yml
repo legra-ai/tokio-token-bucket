@@ -10,7 +10,7 @@ permissions:
   contents: read
 jobs:
   ci:
-    uses: legra-ai/github-actions/.github/workflows/cargo-maintenance.yml@ecef942d82369ca0f11e7b07970b3202d1bf9d35
+    uses: legra-ai/github-actions/.github/workflows/cargo-maintenance.yml@0d8d26076087886d4741bafd9c34d4066df34075
     with:
       crate-name: tokio-token-bucket
       kind: library
